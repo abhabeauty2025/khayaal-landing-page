@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khayaal Perfumes - تواصل معنا</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: rgba(20, 20, 20, 0.98);
+            border-radius: 30px;
+            padding: 45px 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(212, 175, 55, 0.15);
+            text-align: center;
+            animation: fadeIn 0.6s ease-out;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+            animation: slideDown 0.8s ease-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #1a1a1a;
+            border: 3px solid #d4af37;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.4), inset 0 0 20px rgba(212, 175, 55, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .logo:hover {
+            transform: scale(1.08) rotate(5deg);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.6), inset 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .upload-section {
+            display: inline-block;
+        }
+
+        .upload-label {
+            cursor: pointer;
+        }
+
+        .upload-placeholder {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 3px dashed #d4af37;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(212, 175, 55, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .upload-placeholder:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: #ffd700;
+            transform: scale(1.08);
+        }
+
+        .upload-placeholder p {
+            margin-top: 10px;
+            color: #d4af37;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        h1 {
+            color: #d4af37;
+            font-size: 36px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .tagline {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 35px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .website-link {
+            display: block;
+            width: 100%;
+            padding: 22px 30px;
+            background: linear-gradient(135deg, #d4af37 0%, #f0d76a 100%);
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 18px;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .website-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .website-link:hover::before {
+            left: 100%;
+        }
+
+        .website-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.7);
+        }
+
+        .website-icon {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 24px;
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .social-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px 15px;
+            background: rgba(212, 175, 55, 0.05);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 16px;
+            text-decoration: none;
+            color: #d4af37;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .social-button:hover::before {
+            left: 100%;
+        }
+
+        .social-button:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+            background: rgba(212, 175, 55, 0.15);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-button:hover .social-icon {
+            transform: scale(1.15);
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            color: #666;
+            font-size: 13px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 35px 20px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .website-link {
+                padding: 18px 25px;
+                font-size: 18px;
+            }
+
+            .social-links {
+                gap: 12px;
+            }
+
+            .social-button {
+                padding: 18px 12px;
+                font-size: 14px;
+            }
+
+            .logo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .upload-placeholder {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="" class="logo" alt="Khayaal Perfumes Logo" id="logoImg" style="display: none;">
+            <div class="upload-section">
+                <label for="logoUpload" class="upload-label">
+                    <div class="upload-placeholder">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM17 13H13V17H11V13H7V11H11V7H13V11H17V13Z" fill="#d4af37"/>
+                        </svg>
+                        <p>تحميل الشعار</p>
+                    </div>
+                </label>
+                <input type="file" id="logoUpload" accept="image/*" style="display: none;">
+            </div>
+        </div>
+
+        <h1>Khayaal Perfumes</h1>
+        <p class="tagline">WHERE LUXURY MEETS TRUST</p>
+
+        <a href="https://abha-beauty.com/" class="website-link" target="_blank">
+            <span class="website-icon">🌐</span>
+            <span>زيارة الموقع الإلكتروني</span>
+        </a>
+
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/1AprgPmj5s/" class="social-button facebook" target="_blank">
+                <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 12C24 5.37 18.63 0 12 0C5.37 0 0 5.37 0 12C0 17.99 4.39 22.95 10.13 23.88V15.47H7.08V12H10.13V9.36C10.13 6.35 11.92 4.69 14.66 4.69C15.97 4.69 17.34 4.92 17.34 4.92V7.87H15.83C14.33 7.87 13.87 8.79 13.87 9.73V12H17.2L16.67 15.47H13.87V23.88C19.61 22.95 24 17.99 24 12Z" fill="#d4af37"/>
+                </svg>
+                <span>فيسبوك</span>
+            </a>
+
+            <a href="https://wa.me/201025689799" class="social-button whatsapp" target="_blank">
+                <svg class="social-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.52 3.48C18.25 1.25 15.31 0 12.07 0C5.47 0 0.1 5.37 0.1 11.97C0.1 14.04 0.62 16.05 1.58 17.81L0 24L6.42 22.47C8.1 23.34 10 23.8 12.07 23.8C18.67 23.8 24.04 18.43 24.04 11.83C24.04 8.59 22.79 5.65 20.52 3.48ZM12.07 21.81C10.28 21.81 8.55 21.37 6.99 20.56L6.65 20.38L2.99 21.29L3.91 17.74L3.71 17.37C2.81 15.74 2.35 13.92 2.35 11.97C2.35 6.56 6.63 2.27 12.07 2.27C14.85 2.27 17.48 3.35 19.33 5.21C21.18 7.07 22.25 9.7 22.25 12.48C22.25 17.88 17.96 21.81 12.07 21.81ZM17.9 14.59C17.59 14.44 16.07 13.68 15.79 13.58C15.5 13.48 15.3 13.43 15.1 13.74C14.9 14.04 14.34 14.71 14.16 14.92C13.99 15.12 13.81 15.15 13.51 14.99C12.56 14.54 11.73 14 10.76 13.02C9.99 12.25 9.42 11.37 9.25 11.06C9.08 10.76 9.23 10.6 9.4 10.43C9.54 10.29 9.71 10.08 9.86 9.89C10 9.7 10.06 9.55 10.17 9.35C10.27 9.14 10.22 8.95 10.13 8.79C10.03 8.63 9.47 7.12 9.2 6.5C8.94 5.88 8.67 5.97 8.49 5.97C8.32 5.97 8.14 5.97 7.96 5.97C7.78 5.97 7.49 6.04 7.2 6.34C6.91 6.65 6.1 7.4 6.1 8.91C6.1 10.42 7.24 11.88 7.39 12.08C7.54 12.28 9.47 15.32 12.47 16.52C13.23 16.82 13.84 17.01 14.34 17.15C15.1 17.36 15.8 17.33 16.35 17.24C16.97 17.14 18.24 16.51 18.51 15.82C18.78 15.13 18.78 14.53 18.69 14.39C18.6 14.25 18.41 14.18 18.12 14.04C17.93 13.93 17.9 14.59 17.9 14.59Z" fill="#d4af37"/>
+                </svg>
+                <span>واتساب</span>
+            </a>
+        </div>
+
+        <div class="footer">
+            © 2024 Khayaal Perfumes. Where Luxury Meets Trust.
+        </div>
+    </div>
+
+    <script>
+        // Auto-load logo from same folder
+        const logoImg = document.getElementById('logoImg');
+        const uploadSection = document.querySelector('.upload-section');
+
+        // Try to load logo.jpeg from the same folder
+        const img = new Image();
+        img.onload = function() {
+            // Create canvas for circular crop
+            const canvas = document.createElement('canvas');
+            const size = Math.max(img.width, img.height);
+            canvas.width = size;
+            canvas.height = size;
+            
+            const ctx = canvas.getContext('2d');
+            
+            // Fill background
+            ctx.fillStyle = 'transparent';
+            ctx.fillRect(0, 0, size, size);
+            
+            // Draw circular clip
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size/2, 0, Math.PI * 2);
+            ctx.closePath();
+            ctx.clip();
+            
+            // Draw image centered
+            const offsetX = (size - img.width) / 2;
+            const offsetY = (size - img.height) / 2;
+            ctx.drawImage(img, offsetX, offsetY, img.width, img.height);
+            
+            // Set as logo and show it
+            logoImg.src = canvas.toDataURL();
+            logoImg.style.display = 'block';
+            uploadSection.style.display = 'none';
+        };
+
+        img.onerror = function() {
+            // If logo not found, show upload placeholder
+            console.log('Logo not found - upload placeholder shown');
+        };
+
+        // Load logo from same folder
+        img.src = 'logo.jpeg';
+
+        // Optional: Allow clicking logo to upload a new one
+        logoImg.addEventListener('click', function() {
+            const logoUpload = document.getElementById('logoUpload');
+            if (logoUpload) logoUpload.click();
+        });
+
+        // Handle manual upload if needed
+        const logoUpload = document.getElementById('logoUpload');
+        if (logoUpload) {
+            logoUpload.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        const uploadImg = new Image();
+                        uploadImg.onload = function() {
+                            const canvas = document.createElement('canvas');
+                            const size = Math.max(uploadImg.width, uploadImg.height);
+                            canvas.width = size;
+                            canvas.height = size;
+                            
+                            const ctx = canvas.getContext('2d');
+                            ctx.fillStyle = 'transparent';
+                            ctx.fillRect(0, 0, size, size);
+                            ctx.beginPath();
+                            ctx.arc(size/2, size/2, size/2, 0, Math.PI * 2);
+                            ctx.closePath();
+                            ctx.clip();
+                            
+                            const offsetX = (size - uploadImg.width) / 2;
+                            const offsetY = (size - uploadImg.height) / 2;
+                            ctx.drawImage(uploadImg, offsetX, offsetY, uploadImg.width, uploadImg.height);
+                            
+                            logoImg.src = canvas.toDataURL();
+                            logoImg.style.display = 'block';
+                            uploadSection.style.display = 'none';
+                        };
+                        uploadImg.src = event.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
